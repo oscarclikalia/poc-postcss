@@ -1,17 +1,18 @@
+import { Suspense } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./page.module.css";
 import { getDog } from "@/actions/dogs";
-import { DogCard, Title } from "@/components";
+import { DogCard, DogCardSkeleton, Title } from "@/components";
 
 export default async function Home() {
-  const dog = await getDog();
-
   return (
     <div className={styles.page}>
       <main className={styles.main}>
         <Title title="POC Postcss" />
-        <DogCard dog={dog} />
+        <Suspense fallback={<DogCardSkeleton />}>
+          <DogCardSuspense />
+        </Suspense>
         <ol>
           <li>
             Images from{" "}
@@ -36,4 +37,9 @@ export default async function Home() {
       <footer className={styles.footer}>Oscar</footer>
     </div>
   );
+}
+
+async function DogCardSuspense() {
+  const dog = await getDog();
+  return <DogCard key={dog} dog={dog} />;
 }

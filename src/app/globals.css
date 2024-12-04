@@ -50,3 +50,21 @@ a {
     color-scheme: dark;
   }
 }
+
+@keyframes pulse {
+  0% {
+    opacity: 0.25;
+  }
+  25% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.1;
+  }
+  75% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0.25;
+  }
+}

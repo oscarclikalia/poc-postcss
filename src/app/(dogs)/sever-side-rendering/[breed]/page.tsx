@@ -6,7 +6,7 @@ import styles from "./page.module.css";
 export default async function ServerPage({
   params,
 }: {
-  params: { breed: string };
+  params: Promise<{ breed: string }>;
 }) {
   const { breed } = await params;
 
@@ -35,5 +35,5 @@ export default async function ServerPage({
 
 async function DogCardSuspense({ breed }: { breed: string }) {
   const breeds = await getDogsByBreed(breed);
-  return breeds.map((dog: string) => <DogCard dog={dog} />);
+  return breeds.map((dog: string) => <DogCard key={dog} dog={dog} />);
 }

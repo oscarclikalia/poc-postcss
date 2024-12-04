@@ -9,5 +9,6 @@ module.exports = {
       },
     },
     "postcss-custom-media": {},
+    cssnano: {},
   },
 };

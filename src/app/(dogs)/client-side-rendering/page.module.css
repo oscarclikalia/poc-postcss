@@ -8,7 +8,7 @@
   gap: 16px;
 
   a {
-    border: 1px solid #000;
+    border: 1px solid var(--secondary-color);
     border-radius: 8px;
     padding: 8px;
     text-decoration: none;
@@ -18,6 +18,14 @@
       cursor: pointer;
     }
   }
+}
+
+.skeleton-container {
+  border-radius: 8px;
+  height: 36px;
+  background-color: #a09898;
+  opacity: 0.1;
+  animation: pulse 2.5s infinite;
 }
 
 .search-input {

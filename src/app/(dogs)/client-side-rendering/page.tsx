@@ -8,11 +8,15 @@ import { Title } from "@/components";
 export default function ClientPage() {
   const [breeds, setBreeds] = useState<string[]>([]);
   const [search, setSearch] = useState<string>("");
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
     fetch("https://dog.ceo/api/breeds/list/all")
       .then((res) => res.json())
       .then((data) => setBreeds(Object.keys(data.message)));
+
+    setLoading(false);
   }, []);
 
   const filteredBreed = useMemo(
@@ -27,7 +31,7 @@ export default function ClientPage() {
   };
 
   return (
-    <div className={styles.mainContainer}>
+    <div className={styles.mainContainerrrr}>
       <Title title="Breeds" />
       <input
         type="text"
@@ -39,15 +43,16 @@ export default function ClientPage() {
         onChange={handleSearchChange}
       />
       <div className={styles["bred-container"]}>
-        {filteredBreed.map((breed) => (
-          <Link
-            key={breed}
-            href={`sever-side-rendering/${breed}`}
-            className={styles.link}
-          >
-            {breed}
-          </Link>
-        ))}
+        {!loading &&
+          filteredBreed.map((breed) => (
+            <Link key={breed} href={`sever-side-rendering/${breed}`}>
+              {breed}
+            </Link>
+          ))}
+        {loading &&
+          Array.from({ length: 10 }).map((e, i) => (
+            <div key={i} className={styles["skeleton-container"]} />
+          ))}
       </div>
     </div>
   );

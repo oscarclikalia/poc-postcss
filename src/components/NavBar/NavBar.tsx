@@ -13,6 +13,7 @@ const routes: Route[] = [
   { route: "/", name: "Home" },
   // { route: "/sever-side-rendering", name: "Server" },
   { route: "/client-side-rendering", name: "Client" },
+  { route: "/play-ground", name: "Play Ground" },
 ];
 
 export const NavBar = () => {
