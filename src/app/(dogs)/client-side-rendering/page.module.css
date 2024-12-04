@@ -1,0 +1,52 @@
+.mainContainer {
+  padding: 16px;
+}
+
+.bred-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+
+  a {
+    border: 1px solid #000;
+    border-radius: 8px;
+    padding: 8px;
+    text-decoration: none;
+    text-align: center;
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  border: 2px solid var(--border-color, #ccc);
+  border-radius: 8px;
+  background-color: var(--bg-color, #f9f9f9);
+  color: var(--text-color, #333);
+
+  &:focus {
+    border-color: var(--focus-color, #007bff);
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+  }
+
+  &::placeholder {
+    color: var(--placeholder-color, #aaa);
+  }
+
+  &:disabled {
+    background-color: var(--disabled-bg, #e9ecef);
+    cursor: not-allowed;
+  }
+}
+
+@media (min-width: 768px) {
+  .bred-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

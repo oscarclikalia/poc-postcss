@@ -48,16 +48,19 @@
   margin-bottom: 8px;
 }
 
-.main code {
-  font-family: inherit;
-  background: var(--gray-alpha-100);
-  padding: 2px 4px;
-  border-radius: 4px;
-  font-weight: 600;
+.main {
+  & code {
+    font-family: inherit;
+    background: var(--gray-alpha-100);
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-weight: 600;
+  }
 }
 
 .ctas {
   display: flex;
+  justify-content: center;
   gap: 16px;
 }
 
@@ -68,10 +71,7 @@
   padding: 0 20px;
   border: none;
   border: 1px solid transparent;
-  transition:
-    background 0.2s,
-    color 0.2s,
-    border-color 0.2s;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
   cursor: pointer;
   display: flex;
   align-items: center;
