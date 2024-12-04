@@ -6,7 +6,7 @@ export default function PlayGroundPage() {
     <div>
       <p>
         No hay conflictividad de clases entre compomentes padres e hijos. Ambos
-        containers tienen una clase 'container'
+        containers tienen una clase container
       </p>
       <ParentComponent>
         <ChildComponent />
