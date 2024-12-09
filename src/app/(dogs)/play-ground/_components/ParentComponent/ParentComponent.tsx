@@ -8,7 +8,8 @@ type ParentComponentProps = {
 export const ParentComponent = ({ children }: ParentComponentProps) => {
   return (
     <div className={styles.container}>
-      ParentComponent
+      ParentComponent div con clase container y estilos provenientes del archivo
+      parent-component.module.css
       {children}
     </div>
   );
