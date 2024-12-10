@@ -19,8 +19,6 @@ const routes: Route[] = [
 export const NavBar = () => {
   const pathname = usePathname();
 
-  console.log(pathname);
-
   return (
     <nav className={styles.container}>
       {routes.map((route) => (

@@ -112,7 +112,7 @@ a {
     color: var(--color-white);
 
     &:hover {
-      background-color: darken(var(--color-primary), 10%);
+      background-color: #136ac6;
     }
   }
 
